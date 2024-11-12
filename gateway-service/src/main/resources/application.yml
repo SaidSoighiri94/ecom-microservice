@@ -4,12 +4,12 @@ spring:
       mvc:
         routes:
         - id: route1
-          uri: http://localhost:8081
+          uri: lb://CUSTOMER-SERVICE
           predicates:
             - Path= /api/customers/**
             
         - id: route2
-          uri: http://localhost:8082
+          uri: lb://INVENTORY-SERVICE
           predicates:
             - Path= /api/products/**
             
