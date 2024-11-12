@@ -1,15 +1,14 @@
 spring:
   cloud:
     gateway:
-      mvc:
-        routes:
+      routes:
         - id: route1
           uri: lb://CUSTOMER-SERVICE
           predicates:
-            - Path= /api/customers/**
+            Path= /api/customers/**
             
         - id: route2
           uri: lb://INVENTORY-SERVICE
           predicates:
-            - Path= /api/products/**
+            Path= /api/products/**
             
