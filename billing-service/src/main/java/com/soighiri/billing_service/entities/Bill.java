@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,6 +23,9 @@ public class Bill {
 	private Long id;
 	private Date billingDate;
 	private long customerId;
+	@OneToMany(mappedBy = "bill")
 	private List<ProductItem> productItems = new ArrayList<>();
+	
+	@Transient private Customer cstomer;
 
 }
