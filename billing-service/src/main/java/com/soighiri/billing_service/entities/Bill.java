@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.soighiri.billing_service.dto.CustomerDto;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +28,6 @@ public class Bill {
 	@OneToMany(mappedBy = "bill")
 	private List<ProductItem> productItems = new ArrayList<>();
 	
-	@Transient private Customer cstomer;
+	@Transient private CustomerDto cstomer;
 
 }
